@@ -212,8 +212,8 @@ vector<iii> ans;
 int main() {
     time_t begin = clock();
     setup();
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+    freopen("test_data.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
     int src, dest;
     int counter = 0;
 
@@ -262,4 +262,4 @@ int main() {
     cerr << setprecision(4);
     cerr << "Replication factor: " << (double) sum / (double) cnt << endl;
     return 0;
-};
+}
