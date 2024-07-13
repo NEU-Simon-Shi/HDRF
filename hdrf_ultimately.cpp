@@ -1,6 +1,7 @@
 // Created by Simon_Shi on 2024-06-01.
 
 #include <bits/stdc++.h>
+#include <random>
 
 using namespace std;
 
@@ -141,7 +142,7 @@ int main(int argc, char *argv[]) {
     // Open files for each partition
     vector<ofstream> partitionFiles(numberOfPartition);
     for (int i = 0; i < numberOfPartition; i++) {
-        string filename = "data/output" + to_string(i + 1) + ".txt";
+        string filename = "../data/output" + to_string(i + 1) + ".txt";
         partitionFiles[i].open(filename);
         if (!partitionFiles[i].is_open()) {
             cerr << "Error opening file: " << filename << endl;
@@ -149,7 +150,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    freopen("data/network_data.txt", "r", stdin);  // change the file here
+    freopen("../data/network_data.txt", "r", stdin);  // change the file here
     char src[100], dest[100];
     int counter = 0;
 
@@ -173,7 +174,8 @@ int main(int argc, char *argv[]) {
     }
     int ukuran = listEdge.size();
     srand(time(nullptr));
-    random_shuffle(listEdge.begin(), listEdge.end());
+//    random_shuffle(listEdge.begin(), listEdge.end());
+    shuffle(listEdge.begin(), listEdge.end(), std::mt19937(std::random_device()()));
 
     for (int i = 0; i < ukuran; i++) {
         string src = listEdge[i].first, dest = listEdge[i].second;
