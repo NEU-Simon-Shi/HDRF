@@ -4,7 +4,5 @@ project(HDRF)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(HDRF
-        hdrf.cpp
-#        test.cpp
-
+        hdrf_ultimately.cpp
 )
